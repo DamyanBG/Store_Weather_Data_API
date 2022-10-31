@@ -1,5 +1,5 @@
 from schemas.bases import BaseCurrentDataSchema
 
 
-class CreateCurrentDataSchema(BaseCurrentDataSchema):
+class CurrentDataResponseSchema(BaseCurrentDataSchema):
     pass

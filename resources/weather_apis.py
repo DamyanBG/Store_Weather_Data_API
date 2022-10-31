@@ -1,6 +1,5 @@
 from flask import request
 from flask_restful import Resource
-from flask import request
 from managers.weather_apis import WeatherApisManager
 
 from utils.decorators import validate_schema
