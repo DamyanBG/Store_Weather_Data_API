@@ -1,5 +1,6 @@
 from flask import request
 from flask_restful import Resource
+from flask import request
 from managers.weather_apis import WeatherApisManager
 
 from utils.decorators import validate_schema
@@ -12,7 +13,8 @@ class ListCreateWeatherApis(Resource):
         schema = WeatherApisResponseSchema()
         return schema.dump(weather_apis, many=True)
 
-    # @validate_schema(WeatherApiCreateSchema)
-    # def post(self):
-    #     weather_api = 
-    #     return
+    @validate_schema(WeatherApiCreateSchema)
+    def post(self):
+        weather_api = WeatherApisManager.create(request.get_json())
+        schema = WeatherApisResponseSchema()
+        return schema.dump(weather_api), 201
