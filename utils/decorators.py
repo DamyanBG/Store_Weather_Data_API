@@ -2,7 +2,6 @@ from flask import request
 from werkzeug.exceptions import BadRequest
 
 
-
 def validate_schema(schema_name):
     def wrapper(func):
         def decorated_func(*args, **kwargs):
