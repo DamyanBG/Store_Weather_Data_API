@@ -1,11 +1,11 @@
 from flask import request
 from flask_restful import Resource
-from flask import request
 from managers.weather_apis import WeatherApisManager
 
 from utils.decorators import validate_schema
 from schemas.request.weather_apis import WeatherApiCreateSchema
 from schemas.response.weather_apis import WeatherApisResponseSchema
+
 
 class ListCreateWeatherApis(Resource):
     def get(self):
