@@ -3,7 +3,7 @@ from marshmallow import Schema, fields, validate
 
 class BaseWeatherApiSchema(Schema):
     name = fields.String(required=True, validate=validate.Length(max=100))
-    url = fields.String(required=True, validate=validate.Length(max=255))
+    api_url = fields.String(required=True, validate=validate.Length(max=255))
 
 
 class BaseCurrentDataSchema(Schema):
