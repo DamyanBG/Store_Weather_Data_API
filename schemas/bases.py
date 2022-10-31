@@ -9,3 +9,4 @@ class BaseWeatherApiSchema(Schema):
 class BaseCurrentDataSchema(Schema):
     place = fields.String(required=True, validate=validate.Length(max=255))
     temperature = fields.Float(required=True)
+    weather_api_pk = fields.Integer(required=True)
