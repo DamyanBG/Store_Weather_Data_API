@@ -7,13 +7,13 @@ from decouple import config
 from db import db
 
 
-class LocalStorageConfiguration:
-    DEBUG = True
-    TEST = True
-    SQLALCHEMY_DATABASE_URI = (
-        f"postgresql://{config('DB_USER_LOCAL')}:{config('DB_PASSWORD_LOCAL')}"
-        f"@{config('DB_HOST_LOCAL')}/{config('DB_NAME_LOCAL')}"
-    )
+# class LocalStorageConfiguration:
+#     DEBUG = True
+#     TEST = True
+#     SQLALCHEMY_DATABASE_URI = (
+#         f"postgresql://{config('DB_USER_LOCAL')}:{config('DB_PASSWORD_LOCAL')}"
+#         f"@{config('DB_HOST_LOCAL')}/{config('DB_NAME_LOCAL')}"
+#     )
 
 
 class RenderDatabaseConfiguration:
