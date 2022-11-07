@@ -16,10 +16,6 @@ class LocalStorageConfiguration:
     )
 
 
-# class RenderDatabaseConfiguration:
-#     DEBUG = True
-#     TEST = True
-#     SQLALCHEMY_DATABASE_URI = f"postgresql://{config('RENDER_USER')}:{config('RENDER_KEY')}@{config('RENDER_URL')}/{config('RENDER_DATABASE_NAME')}"
 
 
 def create_app():

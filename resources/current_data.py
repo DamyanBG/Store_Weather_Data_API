@@ -8,6 +8,11 @@ from managers.current_data import CurrentDataManager
 
 
 class CreateCurrentData(Resource):
+    def get(self):
+        all_current_data = CurrentDataManager.get_all()
+        schema = CurrentDataResponseSchema()
+        return schema.dump(all_current_data, many=True)
+
     @validate_schema(CreateCurrentDataSchema)
     def post(self):
         current_data = CurrentDataManager.create(request.get_json())
