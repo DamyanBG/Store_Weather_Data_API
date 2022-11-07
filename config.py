@@ -16,15 +16,10 @@ class LocalStorageConfiguration:
     )
 
 
-class RenderDatabaseConfiguration:
-    DEBUG = True
-    TEST = True
-    SQLALCHEMY_DATABASE_URI = f"postgresql://{config('RENDER_USER')}:{config('RENDER_KEY')}@{config('RENDER_URL')}/{config('RENDER_DATABASE_NAME')}"
-
 
 def create_app():
     app = Flask(__name__)
-    app.config.from_object(RenderDatabaseConfiguration)
+    app.config.from_object(LocalStorageConfiguration)
     api = Api(app)
     db.init_app(app)
     migrate = Migrate(app, db)

@@ -5,6 +5,10 @@ from models.current_data import CurrentDataModel
 
 class CurrentDataManager:
     @staticmethod
+    def get_all():
+        return CurrentDataModel.query.all()
+
+    @staticmethod
     def create(current_data_data):
         current_data = CurrentDataModel(**current_data_data)
         db.session.add(current_data)
