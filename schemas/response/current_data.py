@@ -1,5 +1,6 @@
 from schemas.bases import BaseCurrentDataSchema
+from marshmallow import fields
 
 
 class CurrentDataResponseSchema(BaseCurrentDataSchema):
-    pass
+    created_on = fields.DateTime()

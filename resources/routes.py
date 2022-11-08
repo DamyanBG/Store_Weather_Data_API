@@ -1,4 +1,8 @@
-from resources.current_data import CreateCurrentData
+from resources.current_data import (
+    ListCreateCurrentData,
+    ListCurrentDataByDay,
+    ListCurrentDataByDayRange,
+)
 from resources.weather_apis import ListCreateWeatherApis
 from resources.weather_prediction import (
     ListCreatePrediction,
@@ -8,7 +12,9 @@ from resources.weather_prediction import (
 
 routes = (
     (ListCreateWeatherApis, "/weather-apis"),
-    (CreateCurrentData, "/current"),
+    (ListCreateCurrentData, "/current"),
+    (ListCurrentDataByDay, "/current-by-day/<string:day>"),
+    (ListCurrentDataByDayRange, "/current-by-day-range"),
     (ListCreatePrediction, "/prediction"),
     (ListPredictionByDay, "/prediction-by-day/<string:day>"),
     (ListPredictionsByDayRange, "/prediction-by-day-range"),
